@@ -527,17 +527,21 @@
 <h2 id="geeignete-algorithmen">Geeignete Algorithmen</h2>
 <p>TODO Beschreibung MST mit Prim kruskal </p>
 <h2 id="die-laufzeit-des-algorithmus">Die Laufzeit des Algorithmus</h2>
-<p>TODO Laufzeitberechnung
+<p>TODO Laufzeitberechnung <code>O(|E| + |V| log |V|)</code>
 TODO (Hier bitte auch eine Begründung einfügen, ein ausführlicher Beweis ist nicht notwendig.)</p>
 <h2 id="die-implementierung-des-algorithmus">Die Implementierung des Algorithmus</h2>
-<p>TODO (Wie haben Sie den Algorithmus umgesetzt? Welche Datenstruktur haben Sie verwendet? Gibt es in Ihrer Implementierung etwas Besonderes?  ) </p>
 <p>Zur Lösung des Problems wurde der Algorithmus von Prim implementiert. Als Datenstruktur wurde eine Prioritätswarteschlange verwendet, die Instanzen der Klasse <code>GraphVertex</code> beinhaltet: </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">VertexComparator</span><span class="p">());</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>Für den Umgang mit Knoten und Kanten wurden drei Klassen implementiert:
-- <code>GraphVertex.java</code>: Beinhaltet die Eigenschaft <code>int value</code>, welche den Key für den Algorithmus von Prim darstellt und das Objekt <code>GraphVertex predecessor</code>, der vom Algorithmus gesetzt wird.
-- <code>GraphEdge.java</code>: Beinhaltet die Eigenschaften <code>String source</code>, <code>String target</code> und <code>double weight</code>.
-- <code>GraphData.java</code>: Behinhaltet die Listen <code>ArrayList&lt;GraphEdge&gt;</code> und <code>ArrayList&lt;GraphVertex&gt;</code></p>
+<p>Für den Umgang mit Knoten und Kanten wurden drei Klassen implementiert:</p>
+<ul>
+<li><code>GraphVertex.java</code>: Beinhaltet die Eigenschaft <code>int value</code>, welche den Key für den Algorithmus von Prim darstellt und das Objekt <code>GraphVertex predecessor</code>, der vom Algorithmus gesetzt wird.</li>
+<li><code>GraphEdge.java</code>: Beinhaltet die Eigenschaften <code>String source</code>, <code>String target</code> und <code>double weight</code>.</li>
+<li><code>GraphData.java</code>: Behinhaltet die Listen <code>ArrayList&lt;GraphEdge&gt;</code> und <code>ArrayList&lt;GraphVertex&gt;</code></li>
+</ul>
+<blockquote>
+<p>Aufgrund der Struktur der <code>GraphVertex</code> und <code>GraphEdge</code> Klassen werden die zusätzlichen Funktionen <code>getNeighbors()</code> und <code>getEdgesBetweenTwoVertices()</code> benötigt. Diese Funktionen benötigen zusätzlicehe Laufzeit und werden in der Klasse <code>GraphData</code> implementiert.</p>
+</blockquote>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
