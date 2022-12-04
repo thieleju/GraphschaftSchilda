@@ -484,16 +484,192 @@
 
 
 <h1 id="problem-3-stromversorgung">Problem 3 - "Stromversorgung"</h1>
+<p>Die Stadt floriert, alles wird moderner und so muss auch die Stromversorgung erneuert werden. Die Stadt hat bereits eruiert, wo Strommasten aufgestellt werden können. Sie haben auch festgestellt, dass es keine Barrieren in der Stadt gibt, d.h., prinzipiell könnten alle Strommasten miteinander verbunden werden. Aber natürlich wollen wir lange Leitungen möglichst vermeiden. Deswegen schränken wir von vornherein ein, dass jeder Strommast nur mit maximal 5 nächsten Nachbarn verbunden werden darf.  Es stellt sich heraus, dass dies immer noch zu teuer ist. Deswegen soll dieses Netz noch einmal so reduziert werden, dass zwar alle Strommasten miteinander verbunden sind, aber Kosten insgesamt minimal sind. Wir nehmen dabei an, dass die Kosten ausschließlich von der Leitungslänge abhängen. </p>
 <h2 id="modellierung-des-problems">Modellierung des Problems</h2>
+<p>Das Problem lässt sich als Graphenmodell mit ungerichteten Kanten darstellen. Jeder Strommast ist ein Knoten, die Verbindungen sind die Kanten. Die Kosten der Kanten sind die Länge der Stromleitungen. </p>
+<p>Es wird eine Konfiguration an Leitungen zwischen den Strommasten gesucht, die eine minimale Gesamtlänge besitzt, und jeder Strommast mit maximal mit 5 weiteren Masten verbunden sein darf.</p>
+<p>Um den Graph zu modellieren werden die Java-Bibliotheken <code>JGraphT</code> und <code>JGraphX</code> verwendet. Mit <code>JGraphT</code> wird der Graph als Datenstruktur modelliert. Mit <code>JGraphX</code> wird der Graph als Grafik dargestellt und auf dem Bildschirm dargestellt.</p>
 <h2 id="die-eingabe">Die Eingabe</h2>
+<p>Die Eingabe besteht aus Knoten, die aus einer <code>.json</code> Datei ausgelesen werden. </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;directed_edges&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;vertices&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pole 0&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pole 1&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pole 2&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="err">...</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Mit der Funktion <code>generate_all_edges()</code> werden alle möglichen Kanten mit zufälligen Gewichten generiert. Diese werden dann dem Input hinzugefügt. </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">private</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">generate_all_edges</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vertices</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vertices</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vertices</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">      </span><span class="c1">// generate random weight and add new edge to output</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">      </span><span class="n">output</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GraphEdge</span><span class="p">(</span><span class="n">vertices</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">getLabel</span><span class="p">(),</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">          </span><span class="n">vertices</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">j</span><span class="p">).</span><span class="na">getLabel</span><span class="p">(),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100.0</span><span class="p">)));</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">output</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <h2 id="die-ausgabe">Die Ausgabe</h2>
 <p>Die Ausgabe wird als Graph in einem Fenster dargestellt. Das Fenster besteht aus zwei Hälften. Auf der linken Seite wird der Eingabegraph dargestellt. Auf der rechten Seite wird der berechnete Graph dargestellt. </p>
 <p>Ein korrekte Ausgabe erfüllt folgende Eigenschaften:
 - TODO</p>
-<p><img alt="Problem2" src="images/problem2.png" /></p>
+<p><img alt="Problem2" src="../images/problem3.png" /></p>
 <h2 id="der-alrogithmus">Der Alrogithmus</h2>
+<p>TODO
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">// Überspringe die Kante e, wenn sie von einem Knoten ausgeht, der bereits mehr als 5 Kanten hat</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="w"> </span><span class="n">source_edges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GraphData</span><span class="p">.</span><span class="na">getAdjacentEdges</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getSource</span><span class="p">(),</span><span class="w"> </span><span class="n">output_edges</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="w"> </span><span class="n">target_edges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GraphData</span><span class="p">.</span><span class="na">getAdjacentEdges</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getTarget</span><span class="p">(),</span><span class="w"> </span><span class="n">output_edges</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">source_edges</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">max_edges</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">target_edges</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">max_edges</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
 <h2 id="die-laufzeit-des-algorithmus">Die Laufzeit des Algorithmus</h2>
+<p>TODO</p>
 <h2 id="die-implementierung-des-algorithmus">Die Implementierung des Algorithmus</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span>
+<span class="normal"><a href="#__codelineno-3-40">40</a></span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span>
+<span class="normal"><a href="#__codelineno-3-42">42</a></span>
+<span class="normal"><a href="#__codelineno-3-43">43</a></span>
+<span class="normal"><a href="#__codelineno-3-44">44</a></span>
+<span class="normal"><a href="#__codelineno-3-45">45</a></span>
+<span class="normal"><a href="#__codelineno-3-46">46</a></span>
+<span class="normal"><a href="#__codelineno-3-47">47</a></span>
+<span class="normal"><a href="#__codelineno-3-48">48</a></span>
+<span class="normal"><a href="#__codelineno-3-49">49</a></span>
+<span class="normal"><a href="#__codelineno-3-50">50</a></span>
+<span class="normal"><a href="#__codelineno-3-51">51</a></span>
+<span class="normal"><a href="#__codelineno-3-52">52</a></span>
+<span class="normal"><a href="#__codelineno-3-53">53</a></span>
+<span class="normal"><a href="#__codelineno-3-54">54</a></span>
+<span class="normal"><a href="#__codelineno-3-55">55</a></span>
+<span class="normal"><a href="#__codelineno-3-56">56</a></span>
+<span class="normal"><a href="#__codelineno-3-57">57</a></span>
+<span class="normal"><a href="#__codelineno-3-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">// Lese die Knoten und Kanten aus den Rohdaten</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vertices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="na">getVertices</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="w"> </span><span class="n">edges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="na">getEdges</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">// Sortiere die Kanten nach Gewicht</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="n">edges</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparingDouble</span><span class="p">(</span><span class="n">GraphEdge</span><span class="p">::</span><span class="n">getWeight</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="c1">// erstelle einen wald &#39;forest&#39; (eine menge von bäumen), wo jeder knoten ein</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1">// eigener baum ist</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">forest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;&gt;</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">GraphVertex</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">vertices</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="n">tree</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">v</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span><span class="n">forest</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">tree</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1">// erstelle eine liste mit den kanten des minimum spanning trees</span><span class="w"></span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="w"> </span><span class="n">forest_edges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="p">(</span><span class="n">edges</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="c1">// erstelle eine liste für die Ausgabe</span><span class="w"></span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="w"> </span><span class="n">output_edges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="c1">// solange der wald nicht leer ist und der baum noch nicht alle knoten enthält</span><span class="w"></span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">forest_edges</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">    </span><span class="c1">// entferne eine kante (u, v) aus forest</span><span class="w"></span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">    </span><span class="n">GraphEdge</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">forest_edges</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">    </span><span class="c1">// finde die bäume, die mit der Kante e verbunden sind</span><span class="w"></span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tree_u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tree_v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">forest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">GraphData</span><span class="p">.</span><span class="na">getSourceVertexFromEdge</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">vertices</span><span class="p">)))</span><span class="w"></span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="w">        </span><span class="n">tree_u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">GraphData</span><span class="p">.</span><span class="na">getTargetVertexFromEdge</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">vertices</span><span class="p">)))</span><span class="w"></span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="w">        </span><span class="n">tree_v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="w">    </span><span class="c1">// Prüfe ob die kante e von einem vertex ausgeht, der bereits mehr als 5 kanten</span><span class="w"></span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="w">    </span><span class="c1">// hat</span><span class="w"></span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="w">    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="w"> </span><span class="n">source_edges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GraphData</span><span class="p">.</span><span class="na">getAdjacentEdges</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getSource</span><span class="p">(),</span><span class="w"> </span><span class="n">output_edges</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="w">    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphEdge</span><span class="o">&gt;</span><span class="w"> </span><span class="n">target_edges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GraphData</span><span class="p">.</span><span class="na">getAdjacentEdges</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getTarget</span><span class="p">(),</span><span class="w"> </span><span class="n">output_edges</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-42" name="__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">source_edges</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">max_edges</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">target_edges</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">max_edges</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="w">        </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-45" name="__codelineno-3-45"></a>
+<a id="__codelineno-3-46" name="__codelineno-3-46"></a><span class="w">    </span><span class="c1">// wenn u und v in gleichen Bäumen sind -&gt; skip</span><span class="w"></span>
+<a id="__codelineno-3-47" name="__codelineno-3-47"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree_u</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">tree_v</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-48" name="__codelineno-3-48"></a><span class="w">        </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-49" name="__codelineno-3-49"></a>
+<a id="__codelineno-3-50" name="__codelineno-3-50"></a><span class="w">    </span><span class="c1">// füge kante von u und v zur Ausgabe hinzu</span><span class="w"></span>
+<a id="__codelineno-3-51" name="__codelineno-3-51"></a><span class="w">    </span><span class="n">output_edges</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-52" name="__codelineno-3-52"></a>
+<a id="__codelineno-3-53" name="__codelineno-3-53"></a><span class="w">    </span><span class="c1">// füge baum von v zu baum von u hinzu (merge)</span><span class="w"></span>
+<a id="__codelineno-3-54" name="__codelineno-3-54"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">GraphVertex</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">tree_v</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-55" name="__codelineno-3-55"></a><span class="w">        </span><span class="n">tree_u</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">v</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-56" name="__codelineno-3-56"></a>
+<a id="__codelineno-3-57" name="__codelineno-3-57"></a><span class="w">    </span><span class="n">forest</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">tree_v</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-58" name="__codelineno-3-58"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 
 
