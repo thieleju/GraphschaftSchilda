@@ -534,8 +534,10 @@
 </code></pre></div></td></tr></table></div>
 <h2 id="die-ausgabe">Die Ausgabe</h2>
 <p>Die Ausgabe wird als Graph in einem Fenster dargestellt. Das Fenster besteht aus zwei Hälften. Auf der linken Seite wird der Eingabegraph dargestellt. Auf der rechten Seite wird der berechnete Graph dargestellt. </p>
-<p>Ein korrekte Ausgabe erfüllt folgende Eigenschaften:
-- TODO</p>
+<p>Ein korrekte Ausgabe erfüllt folgende Eigenschaften:</p>
+<ul>
+<li>TODO</li>
+</ul>
 <p><img alt="Problem2" src="../images/problem3.png" /></p>
 <h2 id="der-alrogithmus">Der Alrogithmus</h2>
 <p>TODO
@@ -642,10 +644,10 @@
 <a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tree_u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
 <a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tree_v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
 <a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GraphVertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">forest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">GraphData</span><span class="p">.</span><span class="na">getSourceVertexFromEdge</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">vertices</span><span class="p">)))</span><span class="w"></span>
-<a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="w">        </span><span class="n">tree_u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">GraphData</span><span class="p">.</span><span class="na">getTargetVertexFromEdge</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">vertices</span><span class="p">)))</span><span class="w"></span>
-<a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="w">        </span><span class="n">tree_v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">GraphData</span><span class="p">.</span><span class="na">getSourceVertexFromEdge</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">vertices</span><span class="p">)))</span><span class="w"></span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="w">          </span><span class="n">tree_u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">GraphData</span><span class="p">.</span><span class="na">getTargetVertexFromEdge</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">vertices</span><span class="p">)))</span><span class="w"></span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="w">          </span><span class="n">tree_v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span>
 <a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
 <a id="__codelineno-3-37" name="__codelineno-3-37"></a>
 <a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="w">    </span><span class="c1">// Prüfe ob die kante e von einem vertex ausgeht, der bereits mehr als 5 kanten</span><span class="w"></span>
