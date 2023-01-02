@@ -10,8 +10,14 @@
       
         <link rel="canonical" href="https://schilda.node5.de/Problem1/">
       
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Problem2/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0">
     
     
       
@@ -19,11 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f79797b0.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -54,7 +59,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
     
@@ -477,10 +482,9 @@
                 
                   
 
-  <a href="https://github.com/thieleju/GraphschaftSchilda/edit/master/docs/Problem1.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
 <h1 id="problem-1-straen-mussen-her">Problem 1 - "Straßen müssen her!"</h1>
@@ -505,20 +509,20 @@
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
 <span class="normal"><a href="#__codelineno-0-12">12</a></span>
 <span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;directed_edges&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;vertices&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 0&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 1&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="err">...</span><span class="w"></span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="p">],</span><span class="w"></span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;edges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 4&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="err">...</span><span class="w"></span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">  </span><span class="p">]</span><span class="w"></span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">}</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;directed_edges&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;vertices&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 0&quot;</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 1&quot;</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="err">...</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;edges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;House 4&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="err">...</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="die-ausgabe">Die Ausgabe</h2>
 <p>Die Ausgabe wird als Graph in einem Fenster dargestellt. Das Fenster besteht aus zwei Hälften. Auf der linken Seite wird der Eingabegraph dargestellt. Auf der rechten Seite wird der berechnete Graph dargestellt. </p>
@@ -535,8 +539,8 @@ TODO (Hier bitte auch eine Begründung einfügen, ein ausführlicher Beweis ist 
 <h2 id="die-implementierung-des-algorithmus">Die Implementierung des Algorithmus</h2>
 <p>Zur Lösung des Problems wurde der Algorithmus von Prim implementiert. Als Datenstruktur wurde eine Prioritätswarteschlange verwendet, die Instanzen der Klasse <code>Vertex</code> beinhaltet: </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">        </span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparingInt</span><span class="p">(</span><span class="n">Vertex</span><span class="p">::</span><span class="n">getValue</span><span class="p">));</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">        </span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparingInt</span><span class="p">(</span><span class="n">Vertex</span><span class="p">::</span><span class="n">getValue</span><span class="p">));</span>
 </code></pre></div></td></tr></table></div>
 <p>Für den Umgang mit Knoten und Kanten wurden drei Klassen implementiert:</p>
 <ul>
@@ -588,48 +592,48 @@ TODO (Hier bitte auch eine Begründung einfügen, ein ausführlicher Beweis ist 
 <span class="normal"><a href="#__codelineno-2-39">39</a></span>
 <span class="normal"><a href="#__codelineno-2-40">40</a></span>
 <span class="normal"><a href="#__codelineno-2-41">41</a></span>
-<span class="normal"><a href="#__codelineno-2-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">// Initialisiere alle Knoten mit ∞, setze den Vorgänger auf null</span><span class="w"></span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Vertex</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">vertices</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="n">v</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="n">v</span><span class="p">.</span><span class="na">setPredecessor</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">}</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-2-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">// Initialisiere alle Knoten mit ∞, setze den Vorgänger auf null</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Vertex</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">vertices</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="n">v</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="p">);</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="n">v</span><span class="p">.</span><span class="na">setPredecessor</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">}</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1">// Starte mit beliebigem Startknoten</span><span class="w"></span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1">// Startknoten bekommt den Wert 0</span><span class="w"></span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">Vertex</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vertices</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="n">start</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1">// Starte mit beliebigem Startknoten</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1">// Startknoten bekommt den Wert 0</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">Vertex</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vertices</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="n">start</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11"></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">// Speichere alle Knoten in einer geeigneten Datenstruktur Q</span><span class="w"></span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1">// -&gt; Prioritätswarteschlange</span><span class="w"></span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparingInt</span><span class="p">(</span><span class="n">Vertex</span><span class="p">::</span><span class="n">getValue</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="n">queue</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">vertices</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">// Speichere alle Knoten in einer geeigneten Datenstruktur Q</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1">// -&gt; Prioritätswarteschlange</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">(</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparingInt</span><span class="p">(</span><span class="n">Vertex</span><span class="p">::</span><span class="n">getValue</span><span class="p">));</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="n">queue</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">vertices</span><span class="p">);</span>
 <a id="__codelineno-2-17" name="__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="c1">// Solange es noch Knoten in Q gibt...</span><span class="w"></span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">  </span><span class="c1">// Wähle den Knoten aus Q mit dem kleinsten Schlüssel (v)</span><span class="w"></span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">  </span><span class="n">Vertex</span><span class="w"> </span><span class="n">vertex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="c1">// Solange es noch Knoten in Q gibt...</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">  </span><span class="c1">// Wähle den Knoten aus Q mit dem kleinsten Schlüssel (v)</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">  </span><span class="n">Vertex</span><span class="w"> </span><span class="n">vertex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
 <a id="__codelineno-2-22" name="__codelineno-2-22"></a>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">  </span><span class="c1">// Für jeden Nachbarknoten n von v...</span><span class="w"></span>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Vertex</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Graph</span><span class="p">.</span><span class="na">getNeighbors</span><span class="p">(</span><span class="n">vertex</span><span class="p">,</span><span class="w"> </span><span class="n">vertices</span><span class="p">,</span><span class="w"> </span><span class="n">edges</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">  </span><span class="c1">// Für jeden Nachbarknoten n von v...</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Vertex</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Graph</span><span class="p">.</span><span class="na">getNeighbors</span><span class="p">(</span><span class="n">vertex</span><span class="p">,</span><span class="w"> </span><span class="n">vertices</span><span class="p">,</span><span class="w"> </span><span class="n">edges</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-25" name="__codelineno-2-25"></a>
-<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">    </span><span class="c1">// Finde Kante zwischen v und n</span><span class="w"></span>
-<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">    </span><span class="n">Edge</span><span class="w"> </span><span class="n">edge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Graph</span><span class="p">.</span><span class="na">getEdgeBetweenTwoVertices</span><span class="p">(</span><span class="n">vertex</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">edges</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">    </span><span class="c1">// Finde Kante zwischen v und n</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">    </span><span class="n">Edge</span><span class="w"> </span><span class="n">edge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Graph</span><span class="p">.</span><span class="na">getEdgeBetweenTwoVertices</span><span class="p">(</span><span class="n">vertex</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">edges</span><span class="p">);</span>
 <a id="__codelineno-2-28" name="__codelineno-2-28"></a>
-<a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="w">    </span><span class="c1">// Wenn der Wert der Kante kleiner ist als der Wert des Knotens und der Knoten</span><span class="w"></span>
-<a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="w">    </span><span class="c1">// noch in Q enthalten ist</span><span class="w"></span>
-<a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">edge</span><span class="p">.</span><span class="na">getWeight</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="na">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"></span>
-<a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="w">      </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="w">    </span><span class="c1">// Wenn der Wert der Kante kleiner ist als der Wert des Knotens und der Knoten</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="w">    </span><span class="c1">// noch in Q enthalten ist</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">edge</span><span class="p">.</span><span class="na">getWeight</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="na">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="w">      </span><span class="k">continue</span><span class="p">;</span>
 <a id="__codelineno-2-33" name="__codelineno-2-33"></a>
-<a id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="w">    </span><span class="c1">// Speichere v als vorgänger von n und passe wert von n an</span><span class="w"></span>
-<a id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="w">    </span><span class="n">n</span><span class="p">.</span><span class="na">setValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">edge</span><span class="p">.</span><span class="na">getWeight</span><span class="p">());</span><span class="w"></span>
-<a id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="w">    </span><span class="n">n</span><span class="p">.</span><span class="na">setPredecessor</span><span class="p">(</span><span class="n">vertex</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="w">    </span><span class="c1">// Speichere v als vorgänger von n und passe wert von n an</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="w">    </span><span class="n">n</span><span class="p">.</span><span class="na">setValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">edge</span><span class="p">.</span><span class="na">getWeight</span><span class="p">());</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="w">    </span><span class="n">n</span><span class="p">.</span><span class="na">setPredecessor</span><span class="p">(</span><span class="n">vertex</span><span class="p">);</span>
 <a id="__codelineno-2-37" name="__codelineno-2-37"></a>
-<a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="w">    </span><span class="c1">// Aktualisiere die Prioritätswarteschlange</span><span class="w"></span>
-<a id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="w">    </span><span class="n">queue</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="w">    </span><span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-2-41" name="__codelineno-2-41"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="w">    </span><span class="c1">// Aktualisiere die Prioritätswarteschlange</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="w">    </span><span class="n">queue</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="w">    </span><span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -646,42 +650,6 @@ TODO (Hier bitte auch eine Begründung einfügen, ein ausführlicher Beweis ist 
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Startseite" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Startseite
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../Problem2/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Wasserversorgung" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              2. Wasserversorgung
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -704,12 +672,11 @@ TODO (Hier bitte auch eine Begründung einfügen, ein ausführlicher Beweis ist 
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>
