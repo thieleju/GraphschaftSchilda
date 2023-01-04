@@ -258,6 +258,53 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#planungstool-aufbau" class="md-nav__link">
+    Planungstool Aufbau
+  </a>
+  
+    <nav class="md-nav" aria-label="Planungstool Aufbau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#das-interface" class="md-nav__link">
+    Das Interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-aufgaben" class="md-nav__link">
+    Die Aufgaben
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Aufgaben">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-eingabe" class="md-nav__link">
+    Die Eingabe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-ausgabe" class="md-nav__link">
+    Die Ausgabe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#das-team" class="md-nav__link">
     Das Team
   </a>
@@ -425,6 +472,53 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#planungstool-aufbau" class="md-nav__link">
+    Planungstool Aufbau
+  </a>
+  
+    <nav class="md-nav" aria-label="Planungstool Aufbau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#das-interface" class="md-nav__link">
+    Das Interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-aufgaben" class="md-nav__link">
+    Die Aufgaben
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Aufgaben">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-eingabe" class="md-nav__link">
+    Die Eingabe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-ausgabe" class="md-nav__link">
+    Die Ausgabe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#das-team" class="md-nav__link">
     Das Team
   </a>
@@ -459,7 +553,7 @@
 
 <h1 id="die-graphschaft-schilda">Die Graphschaft Schilda</h1>
 <h2 id="abstract">Abstract</h2>
-<p>Dieses Dokument ist die Dokumentation des Projektes "Graphschaft Schilda" für das Modul Programmiertechnik III an der TH Aschaffenburg.</p>
+<p>Diese Website ist die Dokumentation des Projektes "Graphschaft Schilda" für das Modul Programmiertechnik III an der TH Aschaffenburg.</p>
 <p>Die Graphschaft Schilda ist ein beschauliches Örtchen irgendwo im Nichts. 
 Lange Zeit blieb diese Graphschaft unbehelligt vom Fortschritt, nichts tat sich in dem  Örtchen. Eines Tages jedoch machte sich dort plötzlich das Gerücht breit, dass fernab der Graphschaft intelligente Menschen leben, die (fast) alle Probleme der Welt mit mächtigen Algorithmen lösen könnten. Die Bürger der Graphschaft machten sich also auf den Weg um diese intelligenten Menschen mit der Lösung ihrer Probleme zu beauftragen....</p>
 <h2 id="aufgabenstellung">Aufgabenstellung</h2>
@@ -470,6 +564,37 @@ Lange Zeit blieb diese Graphschaft unbehelligt vom Fortschritt, nichts tat sich 
 <li>Geben Sie für jeden implementierten Algorithmus die Laufzeit an. Da Sie sich nun schon so viel Mühe mit dem Tool geben, wollen Sie das Tool natürlich auch an andere 
 Gemeinden verkaufen. Die Eingaben sollen dafür generisch, d.h., für neue Orte, Feiern und Planungen anpassbar sein. Sie können diese Aufgabe ein 2er oder 3er Teams lösen. Bitte geben Sie dann die Arbeitsteilung im Dokument mit an. Die 15minütige Einzelprüfung wird auf die Projektaufgabe eingehen. </li>
 </ol>
+<h2 id="planungstool-aufbau">Planungstool Aufbau</h2>
+<h3 id="das-interface">Das Interface</h3>
+<p>Sobald das Programm startet, öffnet sich ein Fenster mit einem Menü für die Auswahl der verschiedenen Probleme. Wenn ein Knopf gedrückt wird, öffnet sich ein neues Fenster mit dem entsprechenden Problem. </p>
+<p><img alt="Tool" src="images/tool.png" /></p>
+<h3 id="die-aufgaben">Die Aufgaben</h3>
+<p>Jedes Problem besitzt eine eigene Klasse <code>ProblemX.java</code>, die sich im Ordner <code>code</code> befinden. </p>
+<p>Der Ordner <code>code/utils</code> enthält die Klassen:
+- <code>AdjazenzMatrix.java</code>: Speichert eine <code>int[][]</code> Matrix, <code>char[]</code> Buchstaben-Array und ob es sich um einen gerichteten oder ungerichteten Graphen handelt.
+- <code>FileHandler.java</code>: Stellt Methoden zum Einlesen und Schreiben von Dateien bereit.
+- <code>Vertex.java</code>: Speichert einen Buchstaben, einen Vertex-Vorgänger, einen 'key' und eine Option ob der Vertex bereits besucht wurde.
+- <code>Edge.java</code>: Speichert zwei Buchstaben für den Start- und Endknoten der Kante und ein Gewicht.
+- <code>JGraphPanel.java</code>: Eine Klasse, die ein <code>JPanel</code> erweitert und mit Hilfe der <a href="https://jgraph.github.io/mxgraph/">mxgraph</a> und <a href="https://jgrapht.org/">jgrapht</a> Bibliotheken einen Graphen zeichnet.
+- <code>BasicWindow.java</code>: Eine Klasse, die ein <code>JFrame</code> erweitert und als Grundlage für die Fenster der einzelnen Probleme dient.</p>
+<h4 id="die-eingabe">Die Eingabe</h4>
+<p>Die Eingabedateien befinden sich in dem Ordner <code>data</code> und folgen dem Namensschema <code>problemX.txt</code>. Die Dateien werden mit der Klasse <code>FileHandler.java</code> eingelesen und in einer Instanz der Klasse <code>AdjazenzMatrix.java</code> gespeichert. </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nx">Ungerichteter</span><span class="w"> </span><span class="nx">Graph</span><span class="w">      </span><span class="nx">Gerichteter</span><span class="w"> </span><span class="nx">Graph</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="nx">A</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="p">...</span><span class="w">                </span><span class="nx">A</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="p">...</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nx">A</span><span class="w"> </span><span class="mf">0</span><span class="w">                      </span><span class="nx">A</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">1</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nx">B</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="mf">0</span><span class="w">                    </span><span class="nx">B</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">1</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nx">C</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="mf">0</span><span class="w">                  </span><span class="nx">C</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">...</span><span class="w">                      </span><span class="p">...</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="die-ausgabe">Die Ausgabe</h4>
+<p>Die Ausgabedateien befinden sich in dem Ordner <code>output</code> und werden automatisch generiert oder überschrieben sobald ein Punkt aus dem Menü ausgewählt wird.</p>
+<p>Beim Betätigen eines Menübuttons wird die Ein- und Ausgabe graphisch dargestellt und zusätzlich in der Konsole ausgegeben.</p>
+<p>In der Ausgabedatei werden die Graphen in einer Adjazenzmatrix gespeichert, die dem Schema der Eingabedatei entspricht. </p>
 <h2 id="das-team">Das Team</h2>
 <ul>
 <li>Felix Möhler - <a href="https://github.com/flexx7">GitHub</a></li>
