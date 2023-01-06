@@ -570,13 +570,27 @@ Gemeinden verkaufen. Die Eingaben sollen dafür generisch, d.h., für neue Orte,
 <p><img alt="Tool" src="images/tool.png" /></p>
 <h3 id="die-aufgaben">Die Aufgaben</h3>
 <p>Jedes Problem besitzt eine eigene Klasse <code>ProblemX.java</code>, die sich im Ordner <code>code</code> befinden. </p>
-<p>Der Ordner <code>code/utils</code> enthält die Klassen:
-- <code>AdjazenzMatrix.java</code>: Speichert eine <code>int[][]</code> Matrix, <code>char[]</code> Buchstaben-Array und ob es sich um einen gerichteten oder ungerichteten Graphen handelt.
-- <code>FileHandler.java</code>: Stellt Methoden zum Einlesen und Schreiben von Dateien bereit.
-- <code>Vertex.java</code>: Speichert einen Buchstaben, einen Vertex-Vorgänger, einen 'key' und eine Option ob der Vertex bereits besucht wurde.
-- <code>Edge.java</code>: Speichert zwei Buchstaben für den Start- und Endknoten der Kante und ein Gewicht.
-- <code>JGraphPanel.java</code>: Eine Klasse, die ein <code>JPanel</code> erweitert und mit Hilfe der <a href="https://jgraph.github.io/mxgraph/">mxgraph</a> und <a href="https://jgrapht.org/">jgrapht</a> Bibliotheken einen Graphen zeichnet.
-- <code>BasicWindow.java</code>: Eine Klasse, die ein <code>JFrame</code> erweitert und als Grundlage für die Fenster der einzelnen Probleme dient.</p>
+<p>Der Ordner <code>code/utils</code> enthält die Klassen:</p>
+<ul>
+<li>
+<p><code>AdjazenzMatrix.java</code>: Speichert eine <code>int[][]</code> Matrix, <code>char[]</code> Buchstaben-Array und ob es sich um einen gerichteten oder ungerichteten Graphen handelt.</p>
+</li>
+<li>
+<p><code>FileHandler.java</code>: Stellt Methoden zum Einlesen und Schreiben von Dateien bereit.</p>
+</li>
+<li>
+<p><code>Vertex.java</code>: Speichert einen Buchstaben, einen Vertex-Vorgänger, einen 'key' und eine Option ob der Vertex bereits besucht wurde.</p>
+</li>
+<li>
+<p><code>Edge.java</code>: Speichert zwei Buchstaben für den Start- und Endknoten der Kante und ein Gewicht.</p>
+</li>
+<li>
+<p><code>JGraphPanel.java</code>: Eine Klasse, die ein <code>JPanel</code> erweitert und mit Hilfe der <a href="https://jgraph.github.io/mxgraph/">mxgraph</a> und <a href="https://jgrapht.org/">jgrapht</a> Bibliotheken einen Graphen zeichnet.</p>
+</li>
+<li>
+<p><code>BasicWindow.java</code>: Eine Klasse, die ein <code>JFrame</code> erweitert und als Grundlage für die Fenster der einzelnen Probleme dient.</p>
+</li>
+</ul>
 <h4 id="die-eingabe">Die Eingabe</h4>
 <p>Die Eingabedateien befinden sich in dem Ordner <code>data</code> und folgen dem Namensschema <code>problemX.txt</code>. Die Dateien werden mit der Klasse <code>FileHandler.java</code> eingelesen und in einer Instanz der Klasse <code>AdjazenzMatrix.java</code> gespeichert. </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
