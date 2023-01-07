@@ -576,7 +576,7 @@ Gemeinden verkaufen. Die Eingaben sollen dafür generisch, d.h., für neue Orte,
 <p><code>AdjazenzMatrix.java</code>: Speichert eine <code>int[][]</code> Matrix, <code>char[]</code> Buchstaben-Array und ob es sich um einen gerichteten oder ungerichteten Graphen handelt.</p>
 </li>
 <li>
-<p><code>FileHandler.java</code>: Stellt Methoden zum Einlesen und Schreiben von Dateien bereit.</p>
+<p><code>FileHandler.java</code>: Stellt Methoden zum Einlesen und Schreiben von Dateien bereit. Die Laufzeit um eine Datei einzulesen ist <code>O(n)</code> mit n = Anzahl der Zeichen in der Datei. Die Laufzeit des Schreibens ist <code>O(V^2)</code> mit V = Anzahl der Knoten des Graphen.</p>
 </li>
 <li>
 <p><code>Vertex.java</code>: Speichert einen Buchstaben, einen Vertex-Vorgänger, einen 'key' und eine Option ob der Vertex bereits besucht wurde.</p>
