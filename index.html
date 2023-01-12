@@ -258,6 +258,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rahmenbedingungen" class="md-nav__link">
+    Rahmenbedingungen
+  </a>
+  
+    <nav class="md-nav" aria-label="Rahmenbedingungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eingabe" class="md-nav__link">
+    Eingabe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ausgabe" class="md-nav__link">
+    Ausgabe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#planungstool-aufbau" class="md-nav__link">
     Planungstool Aufbau
   </a>
@@ -472,6 +499,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rahmenbedingungen" class="md-nav__link">
+    Rahmenbedingungen
+  </a>
+  
+    <nav class="md-nav" aria-label="Rahmenbedingungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eingabe" class="md-nav__link">
+    Eingabe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ausgabe" class="md-nav__link">
+    Ausgabe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#planungstool-aufbau" class="md-nav__link">
     Planungstool Aufbau
   </a>
@@ -554,16 +608,31 @@
 <h1 id="die-graphschaft-schilda">Die Graphschaft Schilda</h1>
 <h2 id="abstract">Abstract</h2>
 <p>Diese Website ist die Dokumentation des Projektes "Graphschaft Schilda" für das Modul Programmiertechnik III an der TH Aschaffenburg.</p>
-<p>Die Graphschaft Schilda ist ein beschauliches Örtchen irgendwo im Nichts. 
+<p>Die Graphschaft Schilda ist ein beschauliches Örtchen irgendwo im Nichts.
 Lange Zeit blieb diese Graphschaft unbehelligt vom Fortschritt, nichts tat sich in dem  Örtchen. Eines Tages jedoch machte sich dort plötzlich das Gerücht breit, dass fernab der Graphschaft intelligente Menschen leben, die (fast) alle Probleme der Welt mit mächtigen Algorithmen lösen könnten. Die Bürger der Graphschaft machten sich also auf den Weg um diese intelligenten Menschen mit der Lösung ihrer Probleme zu beauftragen....</p>
 <h2 id="aufgabenstellung">Aufgabenstellung</h2>
 <p>Entwickeln Sie ein Planungstool, dass der Graphschaft Schilda bei der Lösung ihrer Probleme hilft.  </p>
 <ol>
-<li>Analysieren Sie jedes der Probleme: Welche Daten sollen verarbeitet werden? Was sind die Eingaben? Was die Ausgaben? Welcher Algorithmus eignet sich? Welche Datenstruktur eignet sich? </li>
+<li>Analysieren Sie jedes der Probleme: Welche Daten sollen verarbeitet werden? Was sind die Eingaben? Was die Ausgaben? Welcher Algorithmus eignet sich? Welche Datenstruktur eignet sich?</li>
 <li>Implementieren Sie den Algorithmus (in Java), so dass bei Eingabe der entsprechenden Daten die gewünschte Ausgabe berechnet und ausgegeben wird. </li>
 <li>Geben Sie für jeden implementierten Algorithmus die Laufzeit an. Da Sie sich nun schon so viel Mühe mit dem Tool geben, wollen Sie das Tool natürlich auch an andere 
 Gemeinden verkaufen. Die Eingaben sollen dafür generisch, d.h., für neue Orte, Feiern und Planungen anpassbar sein. Sie können diese Aufgabe ein 2er oder 3er Teams lösen. Bitte geben Sie dann die Arbeitsteilung im Dokument mit an. Die 15minütige Einzelprüfung wird auf die Projektaufgabe eingehen. </li>
 </ol>
+<h2 id="rahmenbedingungen">Rahmenbedingungen</h2>
+<h3 id="eingabe">Eingabe</h3>
+<p>Alle Algorithmen benötigen <strong>einen Graph als Eingabe</strong> und liefern <strong>einen Graph als Ausgabe</strong>.
+Die Testgraphen werden je nach Art des Graphen folgende Form haben:</p>
+<ol>
+<li>ungerichteter und ungewichteter Graph</li>
+<li>ungerichteter und gewichteter Graph</li>
+<li>gerichteter und ungewichteter Graph</li>
+<li>gerichteter und gewichteter Graph</li>
+</ol>
+<p>Alle Graphen werden als einfache Textdateien gegeben. Die erste Zeile beginnt mit zwei Leerzeichen, gefolgt von den <strong>Namen der Knoten</strong>, jeweils getrennt mit einem Leerzeichen.
+Alle weiteren Zeilen starten mit einem <strong>Knotennamen, gefolgt von einer Folge von Zahlen</strong>, jeweils <strong>getrennt durch ein Leerzeichen</strong>.
+Für ungerichtete Graphen werden jeweils nur die Werte unterhalb der Diagonalen angegeben.</p>
+<h3 id="ausgabe">Ausgabe</h3>
+<p>Die Ausgabe erfolgt in derselben Form wie die Eingabe.</p>
 <h2 id="planungstool-aufbau">Planungstool Aufbau</h2>
 <h3 id="das-interface">Das Interface</h3>
 <p>Sobald das Programm startet, öffnet sich ein Fenster mit einem Menü für die Auswahl der verschiedenen Probleme. Wenn ein Knopf gedrückt wird, öffnet sich ein neues Fenster mit dem entsprechenden Problem. </p>
