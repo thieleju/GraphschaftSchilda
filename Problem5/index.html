@@ -363,13 +363,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#schreier-sims-algorithmus" class="md-nav__link">
-    Schreier-Sims-Algorithmus
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -496,13 +489,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#schreier-sims-algorithmus" class="md-nav__link">
-    Schreier-Sims-Algorithmus
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -605,11 +591,9 @@ Unterstützen Sie den Briefträger und entwerfen Sie die neue Route für den Bri
 <h2 id="geeignete-algorithmen">Geeignete Algorithmen</h2>
 <p>Es gibt verschiedene Algorithmen, die verwendet werden können, um eine geschlossenen Eulertour eines ungerichteten und ungewichteten Graphen zu berechnen. Einige dieser Algorithmen sind:</p>
 <h3 id="algorithmus-von-hierholzer">Algorithmus von Hierholzer</h3>
-<p>Dieser Algorithmus basiert auf der Tatsache, dass in einem ungerichteten und unbelichteten Graphen mit genau einer geraden Anzahl von Knoten mit ungerader Gradanzahl eine geschlossene Eulertour existiert. Der Algorithmus startet an einem beliebigen Knoten mit ungerader Gradanzahl und folgt dann den Kanten, bis er wieder zum Ausgangsknoten zurückkehrt. Dieser Prozess wird wiederholt, bis alle Kanten besucht wurden.</p>
+<p>Dieser Algorithmus basiert auf der Tatsache, dass in einem ungerichteten und ungewichteter Graphen, mit Knoten die alle eine gerade Kantenanzahl besitzten eine geschlossene Eulertour existiert. Der Algorithmus startet an einem beliebigen Knoten und folgt dann den Kanten, bis er wieder zum Ausgangsknoten zurückkehrt. Wenn es am aktzellen Knoten keine freien Kanten gibt geht der Algorithmus wieder zu einem Knoten mit frein Kanten zurück. Der Algorithmus endet, wenn alle Kanten besucht wurden und man wieder am Ausgangsknoten angekommen ist.</p>
 <h3 id="algorithmus-von-fleury">Algorithmus von Fleury</h3>
-<p>Dieser Algorithmus startet ebenfalls an einem beliebigen Knoten mit ungerader Gradanzahl und wählt dann immer eine Kante aus, die den aktuellen Knoten mit einem anderen Knoten verbindet. Wenn es mehrere mögliche Kanten gibt, wird die Kante gewählt, die nicht zu einem Knoten führt, der bereits besucht wurde. Der Algorithmus endet, wenn alle Kanten besucht wurden und man wieder am Ausgangsknoten angekommen ist.</p>
-<h3 id="schreier-sims-algorithmus">Schreier-Sims-Algorithmus</h3>
-<p>Dieser Algorithmus erstellt zunächst eine Spur (engl. trace) des Graphen, indem er eine beliebige Kante wählt und diese nach und nach verfolgt, bis er wieder am Ausgangspunkt ankommt. Dann sucht er eine weitere Kante, die nicht Teil der Spur ist und fügt sie in die Spur ein, bis er wieder am Ausgangspunkt ankommt. Dieser Prozess wiederholt sich, bis alle Kanten in die Spur eingefügt wurden.</p>
+<p>Dieser Algorithmus basiert ebenfalls auf der Tatsache, dass in einem ungerichteten und ungewichteter Graphen, mit Knoten die alle eine gerade Kantenanzahl besitzten eine geschlossene Eulertour existiert. Der Algorithmus startet ebenfalls an einem beliebigen Knoten, der keine Brückenkanten besitzt und fügt dann immer eine weitere Kante hinzu, die den aktuellen Knoten mit einem anderen Knoten verbindet. Wenn es mehrere mögliche freie Kanten gibt, wird zuerst die Kante gewählt, die keine Brückenkante ist. Wenn es am aktuellen Knoten keine freien Kanten gibt geht der Algorithmus wieder zu einem Knoten mit frein Kanten zurück. Dieser Prozess wird wiederholt, bis alle Kanten besucht wurden.</p>
 <h2 id="die-laufzeit-des-algorithmus">Die Laufzeit des Algorithmus</h2>
 <p>Laufzeit Problem 5 = O(V^2)</p>
 <p>Die Laufzeit der Funktion <code>hierholzerEulerTour()</code> hängt von der Anzahl der Knoten (V) im Graph ab. Die Laufzeit der Schleife, die die Nachbarn eines Knotens durchläuft, beträgt O(V^2), da jeder Knoten mit jedem anderen Knoten verglichen werden Kann. Die Laufzeit des Stacks beträgt normal O(1). Daraus ergibt sich eine Laufzeit von O(V^2)</p>
