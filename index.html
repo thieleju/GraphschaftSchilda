@@ -248,6 +248,19 @@
     Abstract
   </a>
   
+    <nav class="md-nav" aria-label="Abstract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#art-der-dokumentation" class="md-nav__link">
+    Art der Dokumentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -298,6 +311,13 @@
   
     <nav class="md-nav" aria-label="Planungstool Aufbau">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ordnerstruktur-des-projektes" class="md-nav__link">
+    Ordnerstruktur des Projektes
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#das-interface" class="md-nav__link">
@@ -496,6 +516,19 @@
     Abstract
   </a>
   
+    <nav class="md-nav" aria-label="Abstract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#art-der-dokumentation" class="md-nav__link">
+    Art der Dokumentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -546,6 +579,13 @@
   
     <nav class="md-nav" aria-label="Planungstool Aufbau">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ordnerstruktur-des-projektes" class="md-nav__link">
+    Ordnerstruktur des Projektes
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#das-interface" class="md-nav__link">
@@ -624,6 +664,8 @@
 <p>Diese Website ist die Dokumentation des Projektes "Graphschaft Schilda" für das Modul Programmiertechnik III an der TH Aschaffenburg.</p>
 <p>Die Graphschaft Schilda ist ein beschauliches Örtchen irgendwo im Nichts.
 Lange Zeit blieb diese Graphschaft unbehelligt vom Fortschritt, nichts tat sich in dem  Örtchen. Eines Tages jedoch machte sich dort plötzlich das Gerücht breit, dass fernab der Graphschaft intelligente Menschen leben, die (fast) alle Probleme der Welt mit mächtigen Algorithmen lösen könnten. Die Bürger der Graphschaft machten sich also auf den Weg um diese intelligenten Menschen mit der Lösung ihrer Probleme zu beauftragen....</p>
+<h3 id="art-der-dokumentation">Art der Dokumentation</h3>
+<p>Die Dokumentation des Projekts ist auf der Website <a href="https://schilda.node5.de/">schilda.node5.de</a> zu finden. Alternativ wird automatisiert aus den Markdown-Dateien eine PDF-Dokumentation erstellt, die über <a href="https://github.com/thieleju/GraphschaftSchilda/raw/gh-pages/Dokumentation.pdf">diesen Link</a> herunter geladen werden kann.</p>
 <h2 id="aufgabenstellung">Aufgabenstellung</h2>
 <p>Entwickeln Sie ein Planungstool, dass der Graphschaft Schilda bei der Lösung ihrer Probleme hilft.  </p>
 <ol>
@@ -647,9 +689,62 @@ Für ungerichtete Graphen werden jeweils nur die Werte unterhalb der Diagonalen 
 <h3 id="ausgabe">Ausgabe</h3>
 <p>Die Ausgabe erfolgt in derselben Form wie die Eingabe.</p>
 <h3 id="abgabe-projekt">Abgabe Projekt</h3>
-<p>Das Projekt ist als PDF-Datei mit folgender Benennung "PT3-2022-NAME1-NAME2-Name3.pdf" bis zum 20.01.2023 abzugeben.</p>
+<p>Das Projekt ist als PDF-Datei mit folgender Benennung "PT3-2022-FelixMöhler-JulianThiele.pdf" bis zum 20.01.2023 abzugeben.</p>
 <h2 id="planungstool-aufbau">Planungstool Aufbau</h2>
-<p>asdf</p>
+<p>In den folgenden Abschnitten wird der Aufbau des Planungstools beschrieben.</p>
+<h3 id="ordnerstruktur-des-projektes">Ordnerstruktur des Projektes</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nx">GraphschafSchilda</span><span class="o">/</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="err">├─</span><span class="w"> </span><span class="nx">code</span><span class="o">/</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">data</span><span class="o">/</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="err">│</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="nx">Eingabe</span><span class="w"> </span><span class="nx">txt</span><span class="o">-</span><span class="nx">Dateien</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">output</span><span class="o">/</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="err">│</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="nx">Ausgabe</span><span class="w"> </span><span class="nx">txt</span><span class="o">-</span><span class="nx">Dateien</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">old</span><span class="o">/</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="err">│</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="nx">Frühere</span><span class="w"> </span><span class="nx">Versionen</span><span class="w"> </span><span class="nx">der</span><span class="w"> </span><span class="nx">Algorithmen</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">utils</span><span class="o">/</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="err">│</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">AdjazentMatrix</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="err">│</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">BasicWindow</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="err">│</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">Edge</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="err">│</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">FileHandler</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="err">│</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">JGraphPanel</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="err">│</span><span class="w">  </span><span class="err">│</span><span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="nx">Vertex</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">Main</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">Problem1</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">Problem2</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">Problem3</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">Problem4</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">Problem5</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="err">│</span><span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="nx">Problem6</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="err">│</span><span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="nx">Problem7</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="err">├─</span><span class="w"> </span><span class="nx">documentation</span><span class="o">/</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="err">│</span><span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="nx">docs</span><span class="o">/</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="err">└─</span><span class="w"> </span><span class="nx">libs</span><span class="o">/</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="das-interface">Das Interface</h3>
 <p>Sobald das Programm startet, öffnet sich ein Fenster mit einem Menü für die Auswahl der verschiedenen Probleme. Wenn ein Knopf gedrückt wird, öffnet sich ein neues Fenster mit dem entsprechenden Problem. </p>
 <p><img alt="Tool" src="images/tool.png" /></p>
@@ -678,17 +773,17 @@ Für ungerichtete Graphen werden jeweils nur die Werte unterhalb der Diagonalen 
 </ul>
 <h4 id="die-eingabe">Die Eingabe</h4>
 <p>Die Eingabedateien befinden sich in dem Ordner <code>data</code> und folgen dem Namensschema <code>problemX.txt</code>. Die Dateien werden mit der Klasse <code>FileHandler.java</code> eingelesen und in einer Instanz der Klasse <code>AdjazenzMatrix.java</code> gespeichert. </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nx">Ungerichteter</span><span class="w"> </span><span class="nx">Graph</span><span class="w">      </span><span class="nx">Gerichteter</span><span class="w"> </span><span class="nx">Graph</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="nx">A</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="p">...</span><span class="w">                </span><span class="nx">A</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="p">...</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nx">A</span><span class="w"> </span><span class="mf">0</span><span class="w">                      </span><span class="nx">A</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">1</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nx">B</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="mf">0</span><span class="w">                    </span><span class="nx">B</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">1</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nx">C</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="mf">0</span><span class="w">                  </span><span class="nx">C</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">...</span><span class="w">                      </span><span class="p">...</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nx">Ungerichteter</span><span class="w"> </span><span class="nx">Graph</span><span class="w">      </span><span class="nx">Gerichteter</span><span class="w"> </span><span class="nx">Graph</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="nx">A</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="p">...</span><span class="w">                </span><span class="nx">A</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="p">...</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nx">A</span><span class="w"> </span><span class="mf">0</span><span class="w">                      </span><span class="nx">A</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">1</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nx">B</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="mf">0</span><span class="w">                    </span><span class="nx">B</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">1</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="nx">C</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="mf">0</span><span class="w">                  </span><span class="nx">C</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">...</span><span class="w">                      </span><span class="p">...</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="die-ausgabe">Die Ausgabe</h4>
 <p>Die Ausgabedateien befinden sich in dem Ordner <code>output</code> und werden automatisch generiert oder überschrieben sobald ein Punkt aus dem Menü ausgewählt wird.</p>
